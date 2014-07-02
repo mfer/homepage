@@ -1,0 +1,6 @@
+[submodule "lib/one-php-mvc"]
+	path = lib/one-php-mvc
+	url = https://github.com/ShadowedMists/one-php-mvc.git
+[submodule "lib/bootstrap"]
+	path = lib/bootstrap
+	url = https://github.com/twbs/bootstrap.git
