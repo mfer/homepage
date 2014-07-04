@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "homepage",
+    "author": "mfer",
+    "description": "homepage",
+    "keywords": "bootstrap one-php-mvc homepage",
+    "image": "http://www.gravatar.com/avatar/841627f64dee06c84d29771ce11296b9?s=150&d=mm&r=g"
+  },
+  "default_language" : "en",
+  "languages": ["en"],
+  "includes": [],
+  "master_layout" : "../app/views/_layout.php",
+  "debug": false
+}

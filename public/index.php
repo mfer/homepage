@@ -1,7 +1,7 @@
 <?php
 
 //https://github.com/ShadowedMists/one-php-mvc
-$router = new Router($_SERVER['REQUEST_URI'], 'config.json');
+$router = new Router($_GET["REQUEST_URI"], '../app/config.json');
 $router->run();
 
 /**
@@ -35,6 +35,16 @@ class Configuration {
             foreach($config as $key => $value) {
                 $this->$key = $value;
             }
+
+#todo: set the database atributes
+#
+#  "db": {
+#    "host": "localhost", 
+#    "database": "database",
+#    "username": "database_username",
+#    "password": "database_password"
+#  },
+
         }
         if(!isset($this->default_language)) {
             $this->default_language = 'en';
@@ -138,16 +148,21 @@ class Router {
         }
 
         // assume the requested controller exists for the given file path
-        $fp = 'controllers/' . $this->controller . '.php';
+        $fp = '../app/controllers/' . $this->controller . '.php';
         if(!file_exists($fp)) {
             header('HTTP/1.0 404 Not Found');
             exit;
         }
         include $fp;
+#        echo "included_$fp";
         
         // create Controller object, assuming that it's in the found controller
         $c = ucfirst($this->controller) . 'Controller';
         $c = new $c($this->lang, $this->controller, $this->action, $this->params);
+
+#        echo '<pre>';
+#        print_r($c);
+#        echo '</pre>';
 
         // if the action exists as a method, call it
         if(method_exists($c, $this->action)) {
@@ -178,7 +193,7 @@ class Controller {
     public $scripts = array();
     public $styles = array();
     public $render = array();
-    public $layout = 'views/_layout.php';
+    public $layout = '../app/views/_layout.php';
     protected $current_session;
     protected $current_user;
 
@@ -279,7 +294,7 @@ class Controller {
         $this->set_render_values($action, $controller);
         $this->model = $model;
         // assume the file exists, it's the developers responsibility to do it right
-        include 'views/' . $this->render['controller'] . '/' . $this->render['action'] . '.php';
+        include '../app/views/' . $this->render['controller'] . '/' . $this->render['action'] . '.php';
     }
 
     /**
@@ -378,9 +393,9 @@ class Controller {
         $controller = empty($controller) ? $this->request->controller : $controller;
         
         // short circuit for the home/index url
-        if($controller == 'home' && (empty($action) || $action == 'index') && empty($params)) {
-            return '/' . implode('/', $segments);
-        }
+#        if($controller == 'home' && (empty($action) || $action == 'index') && empty($params)) {
+#            return '/' . implode('/', $segments);
+#        }
 
         // build the request
         $segments[] = $controller;
@@ -397,7 +412,7 @@ class Controller {
                 $segments[] = $params;
             }
         }
-        return '/' . implode('/', $segments);
+        return '/public/index.php?REQUEST_URI=' . implode('/', $segments);
     }
 
     /**
