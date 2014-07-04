@@ -1,2 +1,2 @@
-<h1>one-php-mvc Sample Site</h1>
-<p>This is the sample homepage for one-php-mvc.</p>
+<h1>Welcome</h1>
+<p>This homepage was made using one-php-mvc powered by bootstrap.</p>

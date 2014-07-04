@@ -16,6 +16,9 @@
         <link rel="stylesheet" type="text/css" href="../app/css/bootstrap.min.css" />
         <?php $this->render_styles(); ?>
         <?php $this->render_scripts(); ?>
+
+        <link rel="stylesheet" type="text/css" href="../app/css/site.css" />
+
     </head>
     <body>
 
@@ -31,30 +34,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="<?php echo $this->route_url('index', 'home'); ?>">Homepage</a>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="<?php echo $this->route_url('index', 'About'); ?>">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default</a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+              <li class="active"><a href="./">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -62,29 +50,20 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <?php $this->render_body(); ?>
         <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Button example &raquo;</a>
         </p>
       </div>
-
     </div> <!-- /container -->
 
+    <div class="footer">
+      <p>Homepage by <a href="https://github.com/mfer">mfer</a>.</p>
+      <p><?php echo time()."s desde a Era Unix.";?></p>
+    </div>
 
-<!--        <header>
-            <nav>
-                <ul class="menu">
-                    <li><a href="<?php echo $this->route_url('index', 'home'); ?>">Home</a></li>
-                    <li><a href="<?php echo $this->route_url('index', 'about'); ?>">About</a></li>
-                </ul>
-            </nav>
-        </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../app/js/bootstrap.min.js"></script>
 
-        <?php $this->render_body(); ?>
-
-        <footer>
-            &copy; 2013 - <?php echo date('Y'); ?> one-php-mvc
-        </footer>-->
     </body>
 </html>

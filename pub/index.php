@@ -413,7 +413,7 @@ class Controller {
                 $segments[] = $params;
             }
         }
-        return '/public/index.php?REQUEST_URI=' . implode('/', $segments);
+        return '/pub/index.php?REQUEST_URI=' . implode('/', $segments);
     }
 
     /**
