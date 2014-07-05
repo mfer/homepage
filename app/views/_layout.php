@@ -45,7 +45,7 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="<?php echo $this->route_url('index', 'About'); ?>">Login</a></li>
+              <li><a href="<?php echo $this->route_url('index', 'Login'); ?>">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
