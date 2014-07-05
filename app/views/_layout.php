@@ -59,7 +59,7 @@
 
     <div class="footer">
       <p>Homepage by <a href="https://github.com/mfer">mfer</a>.</p>
-      <p><?php echo time()."s desde a Era Unix.";?></p>
+      <p><?php echo time()."s since Unix.";?></p>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
