@@ -14,16 +14,13 @@
         <meta name="twitter:title" content="<?php echo $this->meta->title; ?>">
         <meta name="twitter:image" content="<?php echo $this->meta->image; ?>">
         <link rel="stylesheet" type="text/css" href="../app/css/bootstrap.min.css" />
-        <?php $this->render_styles(); ?>
-        <?php $this->render_scripts(); ?>
-
         <link rel="stylesheet" type="text/css" href="../app/css/site.css" />
-
+        <?php $this->render_styles(); ?>
+        <?php $this->render_scripts(); ?>        
     </head>
     <body>
 
     <div class="container">
-
       <!-- Static navbar -->
       <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -38,11 +35,17 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="<?php echo $this->route_url('index', 'About'); ?>">About</a></li>
+              <li class="active"><a href="<?php echo $this->route_url('index', 'Home'); ?>">Home</a></li> <!--to make it active <li class="active"><a href="#">Home</a></li>-->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="<?php echo $this->route_url('index', 'About'); ?>">Index</a></li>
+                  <li><a href="<?php echo $this->route_url('what-we-do', 'About'); ?>">What we do</a></li>
+                </ul>
+              </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Login</a></li>
+              <li><a href="<?php echo $this->route_url('index', 'About'); ?>">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -51,9 +54,6 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <?php $this->render_body(); ?>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Button example &raquo;</a>
-        </p>
       </div>
     </div> <!-- /container -->
 
