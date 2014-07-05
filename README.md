@@ -15,6 +15,7 @@ todo
 * internationalization: en, pt-br and ...
 * implement login backend
 * implement the backend to made the selected option at menu activated.
+* exploration of https://github.com/iatek/bootstrap-google-plus
 
 done
 ========

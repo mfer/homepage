@@ -7,3 +7,6 @@
 [submodule "lib/codes"]
 	path = lib/codes
 	url = https://github.com/ShadowedMists/one-php-mvc.git
+[submodule "lib/bootstrap-google-plus"]
+	path = lib/bootstrap-google-plus
+	url = https://github.com/iatek/bootstrap-google-plus.git
