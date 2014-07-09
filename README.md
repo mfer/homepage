@@ -11,11 +11,13 @@ https://github.com/twbs/bootstrap
 todo
 ========
     
-* look for good templates at http://homepages.dcc.ufmg.br/~mfer/homepage/lib/bootstrap/docs/examples/ and convert them to views
+* look for good templates at bootstrap/docs/examples/ and convert them to views
 * internationalization: en, pt-br and ...
 * implement login backend
 * implement the backend to made the selected option at menu activated.
 * exploration of https://github.com/iatek/bootstrap-google-plus
+* discover how implement models at one-php-mvc
+* implement database access
 
 done
 ========
